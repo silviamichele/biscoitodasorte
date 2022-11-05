@@ -45,7 +45,8 @@
     
     function get_concelho(){
         axios.get("https://api.adviceslip.com/advice")
-        .then(res => get_data(res));
+        .then(res => get_data(res))
+        .catch(err => alert("Um erro ocorreu entre em contato com nosso suporte."));
     }
 </script>
 </html>
