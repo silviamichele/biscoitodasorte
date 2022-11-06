@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biscoito da sorte</title>
     <link rel="stylesheet" href="style/style.css">
+
     <!-- font import -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +16,6 @@
 <body>
     <div class="container">
         <header class="header">
-            <!-- <span class="header-img"><img src="style/logo.png"></span> -->
             <ol class="header-options">
                 <li class="logo">Biscoito da Sorte</li>
                 <li class="suport">Suporte</li>
@@ -24,16 +24,15 @@
         </header>
         <div class="container-message">
             <h1 id="message">Your message will be shown here...</h1>
-            <button type="button" class="btn-message" onclick="get_concelho()">Give me a message!!!</button>
+            <button 
+                type="button" 
+                class="btn-message" 
+                onclick="get_concelho()">Give me a message!!!</button>
         </div>
     </div>
-
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-    // https://api.adviceslip.com/advice
-    // https://api.adviceslip.com/advice
-
     function get_data(response){
         if(response.status == 200){
             let message = response.data.slip.advice;
@@ -42,7 +41,7 @@
             alert("Um erro ocorreu entre em contato com nosso suporte.");
         }
     }
-    
+
     function get_concelho(){
         axios.get("https://api.adviceslip.com/advice")
         .then(res => get_data(res))
